@@ -1,0 +1,172 @@
+@font-face {
+    font-family: 'Newfont';
+    src: url('font/Norse-Bold.otf') format('truetype'); /* Percorso del font */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    height: 100vh; /* L'altezza del viewport (schermo intero) */
+}
+
+.left {
+    display: flex;
+    width: 35%; /* Sezione sinistra più stretta, 30% della larghezza */
+    background-color: #f0f0f0; /* Colore di sfondo per identificare la sezione */
+    padding: 20px;
+    background-image: url(images/foresta.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    justify-content: center; 
+    align-items: center; 
+    position: relative;
+}
+.space{
+    margin-top: 20px;
+}
+
+.right {
+    width: 65%; /* Sezione destra più larga, 70% della larghezza */
+    background-color: #ffffff;
+    padding: 20px;
+    padding-right: 220px;
+    display: flex;
+    flex-direction: column; /* Dispone i figli in colonna (uno sotto l'altro) */
+    align-items: center; /* Centra gli elementi orizzontalmente */
+    justify-content: center;
+}
+.logo{
+    width: 70%;
+    font-family:'Newfont', 'Times New Roman', Times, serif ;
+    text-align: center;
+    color: aliceblue;
+    font-size: 230px;
+    
+}
+.immagine{
+    text-align: left;
+    width: 30%;
+    padding: 10;
+}
+.title{
+    background-color: rgba(24, 24, 24, 0.5);
+    display: flex;
+     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: absolute;
+}
+.right {
+    width: 70%; /* Regola la larghezza della sezione destra */
+    background-color: rgb(241, 241, 241);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*padding: 40px;
+    padding-right: 120px;*/
+}
+
+.paragrafo {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-right: 120px;
+    padding: 40px;
+    font-size: 24px;
+}
+
+.formato {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 60px;
+}
+
+.titolo {
+    color: rgb(66, 66, 66);
+    font-family: 'Courier New', monospace;
+    font-size: 24px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Due colonne */
+    gap: 15px;
+}
+
+.form-group {
+    display: contents; /* Permette ai figli di essere posizionati nel grid layout */
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: rgb(100, 100, 100);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    grid-column: span 2; /* Occupa entrambe le colonne */
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #6affb0;
+}
+
+footer {
+    grid-column: span 2; /* Occupa entrambe le colonne */
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+input.error {
+    border: 2px solid red;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px; /* Dimensione del testo piccola */
+    margin-top: 5px;
+    display: none; /* Nasconde il messaggio di errore di default */
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Table template</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+        <div class="left">
+            <div class="title">
+                <img class="immagine" src="images/logo.png" alt="Logo">
+                <div class="logo">ODIN</div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="paragrafo">
+                This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams.
+                <p>Sign up <em>now</em> to get started</p>
+
+                <p class="space">You <em>know</em> you want to</p>
+            </div>
+            <div class="formato">
+                <p class="titolo">Let's do this!</p>
+                <form action="file://wsl.localhost/Ubuntu/home/nuovo/form/sito.html" method="post" onsubmit="return validatePasswords()">
+                    <div>
+                        <div class="form-group">
+                            <label for="first_name">First Name:</label>
+                            <input type="text" id="first_name">
+                        </div>
+                        <div class="form-group">
+                            <label for="surname">Last Name:</label>
+                            <input type="text" id="surname">
+                        </div>
+                        <div class="form-group">
+                            <label for="mail">Email:</label>
+                            <input type="email" id="mail">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form-group">
+                            <label for="number">Phone number:</label>
+                            <input type="tel" id="number">
+                        </div>
+                        <div class="form-group">
+                            <label for="psw">Password:</label>
+                            <input type="password" id="psw">
+                        </div>
+                        <div class="form-group">
+                            <label for="conferma">Confirm Password:</label>
+                            <input type="password" id="conferma">
+                        </div>
+                        <div class="error-message" id="error-message"></div>
+                    </div> 
+                    <input type="submit" value="Create Account">
+                </form>
+                <footer>
+                    Already have an account? <a href="#">Log in</a>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script>
+    function validatePasswords() {
+        var password = document.getElementById('psw');
+        var confirmPassword = document.getElementById('conferma');
+        var errorMessage = document.getElementById('error-message');
+
+        if (password.value !== confirmPassword.value) {
+            password.classList.add('error');
+            confirmPassword.classList.add('error');
+            errorMessage.textContent = "Passwords don't match";
+            errorMessage.style.display = 'block';
+            return false; // Previene l'invio del form
+        } else {
+            password.classList.remove('error');
+            confirmPassword.classList.remove('error');
+            errorMessage.style.display = 'none';
+            return true; // Permette l'invio del form
+        }
+    }
+    </script>
+  </body>
+</html>
